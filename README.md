@@ -1,4 +1,7 @@
 # smee-client dockerized
+This is a fork of https://github.com/deltaprojects/smee-client-docker, but it implements a fix for Bitbucket (see https://github.com/probot/smee-client/pull/122/commits/f2f8e9fa57a36d816fa27f74aaaeb18bc3006b46#diff-168726dbe96b3ce427e7fedce31bb0bc)
+
+# Original content:
 This is a docker container with smee-client on node:lts-alpine image (i.e. Alpine Linux with NodeJS LTS release).
 
 ## Usage
