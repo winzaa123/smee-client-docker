@@ -26,6 +26,11 @@ class Client {
       key = 'repository'
       data.body[key] = projectData
       data.body[key].url = projectData.git_ssh_url
+
+      projectData.ssh_url = projectData.git_ssh_url 
+      projectData.http_url = projectData.git_http_url 
+
+      // data.body.event_name = data.body.object_kind
       
     }
 
