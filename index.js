@@ -52,7 +52,7 @@ class Client {
 
     req.end((err, res) => {
       if (err) {
-        this.logger.error(err)
+        // this.logger.error(err)
       } else {
         this.logger.info(`${req.method} ${req.url} - ${res.statusCode}`)
       }
