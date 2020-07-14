@@ -18,7 +18,16 @@ class Client {
   onmessage (msg) {
     const data = JSON.parse(msg.data)
 
-    console.log("BODY :",JSON.stringify(data.body))
+    // console.log("BODY :",JSON.stringify(data.body))
+
+    if(data.body.object_kind === 'pipeline'){ 
+      // clone data
+      const projectData = data.body['project'],
+      key = 'repository'
+      data.body[key] = projectData
+      data.body[key].url = projectData.git_ssh_url
+      
+    }
 
     const target = url.parse(this.target, true)
     const mergedQuery = Object.assign(target.query, data.query)
