@@ -22,7 +22,7 @@ class Client {
 
     if(data.body.object_kind === 'pipeline'){ 
       // clone data
-      const projectData = data.body['project'],
+      const projectData = JSON.parse(JSON.stringify(data.body['project'])),
       key = 'repository'
       data.body[key] = projectData
       data.body[key].url = projectData.git_ssh_url
