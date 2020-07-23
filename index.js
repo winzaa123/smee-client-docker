@@ -20,19 +20,19 @@ class Client {
 
     // console.log("BODY :",JSON.stringify(data.body))
 
-    if(data.body.object_kind === 'pipeline'){ 
-      // clone data
-      const projectData = JSON.parse(JSON.stringify(data.body['project'])),
-      key = 'repository'
-      data.body[key] = projectData
-      data.body[key].url = projectData.git_ssh_url
+    // if(data.body.object_kind === 'pipeline'){ 
+    //   // clone data
+    //   const projectData = JSON.parse(JSON.stringify(data.body['project'])),
+    //   key = 'repository'
+    //   data.body[key] = projectData
+    //   data.body[key].url = projectData.git_ssh_url
 
-      projectData.ssh_url = projectData.git_ssh_url 
-      projectData.http_url = projectData.git_http_url 
+    //   projectData.ssh_url = projectData.git_ssh_url 
+    //   projectData.http_url = projectData.git_http_url 
 
-      data.body.object_kind = 'push' // force
+    //   data.body.object_kind = 'push' // force
       
-    }
+    // }
 
     const target = url.parse(this.target, true)
     const mergedQuery = Object.assign(target.query, data.query)
