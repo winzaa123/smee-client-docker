@@ -2,6 +2,6 @@
     "autorestart": true,
     "log_date_format"  : "YYYY-MM-DD HH:mm:ss",
     "name": "app",
-    "cron_restart": "0 23 * * *",
+    "cron_restart": "0 21 * * *",
     "script": "smee -u $SMEE_URL -t $JENKINS_TARGET"
 }
